@@ -1,0 +1,62 @@
+
+h2 {
+    margin: 0;
+}
+.servicios {
+    border: 3px solid black;
+    display: grid;
+    grid-template-columns: 50% 50%; /*Columnas - izquierda a derecha*/
+    grid-template-rows: 50% 50%; /*Row - arriba hacia abajo */
+    height: 200px;
+}
+
+@media screen and (min-width: 768px) {
+    .servicios {
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 33% 33% 33%;
+    }
+}
+
+.servicio {
+    color: white;
+    text-align: center;
+}
+
+.servicio-1 {
+    background-color: darkviolet;
+    /* grid-column-start: 1; Para expandir en columna */
+    /* grid-column-end: 2; */
+    /* grid-column: 1 / 2; Esto es lo mismo en una sola linea, start / end */
+    /* grid-row-start: 1;
+    grid-row-end: 3;;
+    grid-row: 1 / span 4;  */
+    /*span es el numero de lieneas que quiero saltar
+    si no utilizamos el span siempre sera una mas a lo
+    que le pondrias al span
+    */
+
+    grid-row: 1 / span 2;
+}
+@media screen and (min-width: 768px) {
+    .servicio-1 {
+        grid-row: 1 /4;
+    }
+    .servicio-2 {
+        grid-column: 2 / 4;
+        grid-row: 1 / 4;
+    }
+    .servicio-3 {
+        grid-row: 1 / 4;
+    }
+}
+
+.servicio-2 {
+    background-color: limegreen;
+    /* grid-column-start: 2;
+    grid-column-end: 4; */
+}
+.servicio-3 {
+    background-color: teal;
+    /* grid-column-start: 2;
+    grid-column-end: 4; */
+}
